@@ -1,14 +1,16 @@
-window.onload = function () {
-      document.getElementById("userForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("userForm");
 
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const phoneNumber = document.getElementById("phoneNumber").value;
-        const emailId = document.getElementById("emailId").value;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // prevent default form submission
 
-        const message = `First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phoneNumber} Email ID: ${emailId}`;
+    const firstName = form.elements["First Name"].value.trim();
+    const lastName = form.elements["Last Name"].value.trim();
+    const phoneNumber = form.elements["Phone Number"].value.trim();
+    const emailId = form.elements["Email ID"].value.trim();
 
-        alert(message);
-      });
-    };
+    const alertMessage = `First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phoneNumber} Email ID: ${emailId}`;
+
+    alert(alertMessage);
+  });
+});
